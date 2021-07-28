@@ -18,6 +18,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/images/**").permitAll()
                 // css 폴더를 login 없이 허용
                 .antMatchers("/css/**").permitAll()
+                // /user로 시작하는 url은 login 없이 허용
+                .antMatchers("/user/**").permitAll()
+                .antMatchers("/h2-console/**").permitAll()
                 // 그 외 모든 요청은 인증과정 필요
                 .anyRequest().authenticated()
                 .and()
